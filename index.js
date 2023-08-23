@@ -84,6 +84,10 @@ module.exports = class HypercoreError extends Error {
     return new HypercoreError(msg, 'OPLOG_CORRUPT', HypercoreError.OPLOG_CORRUPT)
   }
 
+  static OPLOG_HEADER_OVERFLOW (msg = 'Oplog header exceeds page size') {
+    return new HypercoreError(msg, 'OPLOG_HEADER_OVERFLOW', HypercoreError.OPLOG_HEADER_OVERFLOW)
+  }
+
   static INVALID_OPLOG_VERSION (msg = 'Invalid header version') {
     return new HypercoreError(msg, 'INVALID_OPLOG_VERSION', HypercoreError.INVALID_OPLOG_VERSION)
   }
