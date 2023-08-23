@@ -3,6 +3,9 @@
   "version": "1.1.0",
   "description": "Hypercore errors",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "standard && brittle test.js"
   },
