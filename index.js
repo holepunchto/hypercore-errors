@@ -91,4 +91,8 @@ module.exports = class HypercoreError extends Error {
   static INVALID_OPLOG_VERSION (msg = 'Invalid header version') {
     return new HypercoreError(msg, 'INVALID_OPLOG_VERSION', HypercoreError.INVALID_OPLOG_VERSION)
   }
+
+  static WRITE_FAILED (msg = 'Write to storage failed') {
+    return new HypercoreError(msg, 'WRITE_FAILED', HypercoreError.WRITE_FAILED)
+  }
 }
