@@ -14,3 +14,10 @@ test('block is not available', function (t) {
   t.is(err.message, 'BLOCK_NOT_AVAILABLE: Block is not available')
   t.is(err.code, 'BLOCK_NOT_AVAILABLE')
 })
+
+test('write failed', function (t) {
+  const err = errors.WRITE_FAILED()
+  t.is(err.name, 'HypercoreError')
+  t.is(err.message, 'WRITE_FAILED: Write to storage failed')
+  t.is(err.code, 'WRITE_FAILED')
+})
