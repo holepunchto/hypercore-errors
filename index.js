@@ -12,6 +12,10 @@ module.exports = class HypercoreError extends Error {
     return 'HypercoreError'
   }
 
+  static ASSERTION (msg) { // ERR_ASSERTION is picked up by safety-catch also
+    return new HypercoreError(msg, 'ERR_ASSERTION', HypercoreError.ASSERT)
+  }
+
   static BAD_ARGUMENT (msg) {
     return new HypercoreError(msg, 'BAD_ARGUMENT', HypercoreError.BAD_ARGUMENT)
   }
