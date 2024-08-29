@@ -99,4 +99,8 @@ module.exports = class HypercoreError extends Error {
   static WRITE_FAILED (msg = 'Write to storage failed') {
     return new HypercoreError(msg, 'WRITE_FAILED', HypercoreError.WRITE_FAILED)
   }
+
+  static DECODING_ERROR (msg = 'Decoding error') {
+    return new HypercoreError(msg, 'DECODING_ERROR', HypercoreError.DECODING_ERROR)
+  }
 }
