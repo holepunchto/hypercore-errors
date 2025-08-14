@@ -1,3 +1,5 @@
+const b4a = require('b4a')
+const IdEnc = require('hypercore-id-encoding')
 const test = require('brittle')
 const errors = require('./index.js')
 
@@ -20,4 +22,11 @@ test('write failed', function (t) {
   t.is(err.name, 'HypercoreError')
   t.is(err.message, 'WRITE_FAILED: Write to storage failed')
   t.is(err.code, 'WRITE_FAILED')
+})
+
+test('can pass discKey', function (t) {
+  const err = errors.BLOCK_NOT_AVAILABLE(undefined, b4a.from('a'.repeat(64), 'hex'))
+  t.is(err.name, 'HypercoreError')
+  t.is(err.message, `BLOCK_NOT_AVAILABLE: Block is not available (discovery key: ${IdEnc.normalize('a'.repeat(64))})`)
+  t.is(err.code, 'BLOCK_NOT_AVAILABLE')
 })
