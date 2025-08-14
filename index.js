@@ -1,7 +1,7 @@
 const IdEnc = require('hypercore-id-encoding')
 
 module.exports = class HypercoreError extends Error {
-  constructor (msg, code, fn = HypercoreError, discKey) {
+  constructor (msg, code, fn = HypercoreError, discKey = null) {
     if (discKey) msg = `${msg} (discovery key: ${IdEnc.normalize(discKey)})`
     super(`${code}: ${msg}`)
 
