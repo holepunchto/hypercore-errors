@@ -25,10 +25,7 @@ test('write failed', function (t) {
 })
 
 test('can pass discoveryKey', function (t) {
-  const err = errors.BLOCK_NOT_AVAILABLE(
-    undefined,
-    b4a.from('a'.repeat(64), 'hex')
-  )
+  const err = errors.BLOCK_NOT_AVAILABLE(undefined, b4a.from('a'.repeat(64), 'hex'))
   t.is(err.name, 'HypercoreError')
   t.is(
     err.message,
