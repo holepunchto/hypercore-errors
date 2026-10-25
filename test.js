@@ -24,6 +24,13 @@ test('write failed', function (t) {
   t.is(err.code, 'WRITE_FAILED')
 })
 
+test('invalid manifest', function (t) {
+  const err = errors.INVALID_MANIFEST()
+  t.is(err.name, 'HypercoreError')
+  t.is(err.message, 'INVALID_MANIFEST: Invalid manifest')
+  t.is(err.code, 'INVALID_MANIFEST')
+})
+
 test('can pass discoveryKey', function (t) {
   const err = errors.BLOCK_NOT_AVAILABLE(undefined, b4a.from('a'.repeat(64), 'hex'))
   t.is(err.name, 'HypercoreError')

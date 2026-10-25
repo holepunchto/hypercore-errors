@@ -66,6 +66,15 @@ module.exports = class HypercoreError extends Error {
     )
   }
 
+  static INVALID_MANIFEST(msg = 'Invalid manifest', discoveryKey = null) {
+    return new HypercoreError(
+      msg,
+      'INVALID_MANIFEST',
+      HypercoreError.INVALID_MANIFEST,
+      discoveryKey
+    )
+  }
+
   static INVALID_OPERATION(msg, discoveryKey = null) {
     return new HypercoreError(
       msg,
